@@ -5,6 +5,7 @@ import {
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+
 import { Drink } from './drink.entity';
 import { CreateDrinkDto } from './dto/create-drink.dto';
 
@@ -14,6 +15,7 @@ export class DrinkService {
     @InjectRepository(Drink)
     private readonly drinkRepository: Repository<Drink>,
   ) {}
+
   async findAll(): Promise<Drink[]> {
     const drinks: Drink[] = await this.drinkRepository.find();
     if (!drinks) {

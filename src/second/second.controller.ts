@@ -1,4 +1,5 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
+
 import { CreateSecondDto } from './dto/create-second.dto';
 import { Second } from './second.entity';
 import { SecondService } from './second.service';

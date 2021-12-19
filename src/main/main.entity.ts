@@ -1,5 +1,6 @@
-import { Day } from 'src/day/day.entity';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+
+import { Day } from 'src/day/day.entity';
 
 @Entity()
 export class Main {

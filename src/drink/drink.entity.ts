@@ -1,5 +1,6 @@
-import { Day } from 'src/day/day.entity';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+
+import { Day } from '../day/day.entity';
 
 @Entity()
 export class Drink {
@@ -15,6 +16,6 @@ export class Drink {
   @Column()
   volume!: number;
 
-  @OneToMany(() => Day, (day) => day.drink)
+  @OneToMany(() => Day, (day:Day) => day.drink)
   days: Day[];
 }

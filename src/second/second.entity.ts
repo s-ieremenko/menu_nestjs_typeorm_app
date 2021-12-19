@@ -1,4 +1,3 @@
-import { Day } from 'src/day/day.entity';
 import {
   Column,
   Entity,
@@ -6,6 +5,8 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+
+import { Day } from 'src/day/day.entity';
 
 @Entity()
 export class Second {
@@ -21,6 +22,6 @@ export class Second {
   @Column()
   weight!: number;
 
-  @OneToMany(() => Day, (day) => day.second)
+  @OneToMany(() => Day, (day:Day) => day.second)
   days: Day[];
 }

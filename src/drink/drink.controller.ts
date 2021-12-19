@@ -1,4 +1,5 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
+
 import { Drink } from './drink.entity';
 import { DrinkService } from './drink.service';
 import { CreateDrinkDto } from './dto/create-drink.dto';
@@ -6,6 +7,7 @@ import { CreateDrinkDto } from './dto/create-drink.dto';
 @Controller('drink')
 export class DrinkController {
   constructor(private drinkService: DrinkService) {}
+  
   @Get()
   async getAll(): Promise<Drink[]> {
     return this.drinkService.findAll();
