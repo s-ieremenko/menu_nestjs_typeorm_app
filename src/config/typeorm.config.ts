@@ -24,11 +24,11 @@ export const typeOrmConfigAsync: TypeOrmModuleAsyncOptions = {
     configService: ConfigService,
   ): Promise<TypeOrmModuleOptions> => {
     try {
-    TypeOrmConfig.getOrmConfig(configService)
-  } catch (e) {
-    console.log(e)
-  }
-},
+      console.log(TypeOrmConfig.getOrmConfig(configService));
+      return TypeOrmConfig.getOrmConfig(configService);
+    } catch (e) {
+      console.log(e);
+    }
+  },
   inject: [ConfigService],
-}
-
+};

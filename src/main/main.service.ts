@@ -40,8 +40,7 @@ export class MainService {
       throw new BadRequestException('Such a dish already exists');
     }
     const mainDish: Main = this.mainRepository.create(createMainDto);
-    const mainDishSaved:Main = this.mainRepository.save(mainDish);
-
+    const mainDishSaved = this.mainRepository.save(mainDish);
     if (!mainDishSaved) {
       throw new InternalServerErrorException(
         'Problem to create a main dish. Try again',
